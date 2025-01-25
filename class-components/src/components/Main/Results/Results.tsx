@@ -22,9 +22,9 @@ export function Results({
         <p>Loading...</p>
       ) : (
         <ul>
-          {peoples.results?.map((prev: { name: string }, id: number) => {
-            return <li key={id}>{prev.name}</li>;
-          })}
+          {peoples.results?.map((prev: { name: string }, id: number) => (
+            <li key={id}>{prev.name}</li>
+          ))}
         </ul>
       )}
     </>
