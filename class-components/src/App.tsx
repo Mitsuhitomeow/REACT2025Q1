@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useFetchPeople } from './hooks/useFetchPeoples';
 import './App.css';
+import { Header } from './components/Header/Header';
 
 export default function App() {
   const [count, setCount] = useState(0);
@@ -9,7 +10,7 @@ export default function App() {
   return (
     <>
       <div>
-        <h1>Hello, world</h1>
+        <Header />
 
         <button onClick={() => setCount((prev: number) => prev + 1)}>Click {count}</button>
 
