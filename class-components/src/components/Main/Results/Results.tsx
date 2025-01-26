@@ -1,22 +1,8 @@
 import { ResultsProps } from '../../../types/interface';
 
-export function Results({
-  peoples,
-  loading,
-  error,
-  count,
-  setCount,
-}: ResultsProps) {
+export function Results({ peoples, loading, error }: ResultsProps) {
   return (
     <>
-      <button onClick={() => setCount((prev: number) => prev + 1)}>
-        Click {count}
-      </button>
-
-      <button onClick={() => setCount(0)}>Reset</button>
-
-      <br />
-
       {error && <p style={{ color: 'red' }}>Error: {error}</p>}
       {loading ? (
         <p>Loading...</p>
