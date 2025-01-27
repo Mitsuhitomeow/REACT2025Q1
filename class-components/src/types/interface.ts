@@ -12,4 +12,10 @@ export interface ResultsProps {
   peoples: { results: { name: string }[] };
   loading: boolean;
   error: string | null;
+  nameSearch?: string;
+}
+
+export interface NamesProps {
+  nameSearch: string;
+  setNameSearch: (value: string) => void;
 }

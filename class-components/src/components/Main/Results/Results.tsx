@@ -1,6 +1,9 @@
 import { ResultsProps } from '../../../types/interface';
+import { filterPeople } from '../../../utils/filterPeople';
 
-export function Results({ peoples, loading, error }: ResultsProps) {
+export function Results({ peoples, loading, error, nameSearch }: ResultsProps) {
+  const filterPeopleName = filterPeople(peoples.results || [], nameSearch);
+
   return (
     <>
       {error && <p style={{ color: 'red' }}>Error: {error}</p>}
@@ -8,7 +11,7 @@ export function Results({ peoples, loading, error }: ResultsProps) {
         <p>Loading...</p>
       ) : (
         <ul>
-          {peoples.results?.map((prev: { name: string }, id: number) => (
+          {filterPeopleName.map((prev: { name: string }, id: number) => (
             <li key={id}>{prev.name}</li>
           ))}
         </ul>

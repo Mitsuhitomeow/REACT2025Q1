@@ -1,17 +1,19 @@
 import { useEffect, useState } from 'react';
 import { PeopleFetchProps } from '../types/interface';
+import { API_URL } from '../constants/apiUrl.constant';
 
 export function useFetchPeople(query: string) {
   const [peoples, setPeoples] = useState<PeopleFetchProps>({ results: [] });
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
+  const url = query || API_URL;
+
   useEffect(() => {
     const fetchData = async () => {
       try {
         setLoading(true);
-        if (!query) return (query = 'https://swapi.dev/api/people/');
-        const response = await fetch(query);
+        const response = await fetch(url);
         if (!response.ok) {
           throw new Error('Failed to fetch data: error');
         }
@@ -25,7 +27,7 @@ export function useFetchPeople(query: string) {
     };
 
     fetchData();
-  }, [query]);
+  }, [url]);
 
   return { peoples, loading, error };
 }
