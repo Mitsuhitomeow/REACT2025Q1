@@ -4,7 +4,7 @@ import { Search } from './Search/Search';
 import styles from './Main.module.scss';
 
 export function Main() {
-  const { peoples, loading, error } = useFetchPeople();
+  const { peoples, loading, error } = useFetchPeople('');
 
   return (
     <main className={styles.main}>
