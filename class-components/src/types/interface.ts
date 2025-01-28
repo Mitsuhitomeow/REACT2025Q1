@@ -8,14 +8,14 @@ export interface PeopleProps {
   error: string | null;
 }
 
-export interface ResultsProps {
-  peoples: { results: { name: string }[] };
-  loading: boolean;
-  error: string | null;
-  nameSearch?: string;
-}
-
 export interface NamesProps {
   nameSearch: string;
   setNameSearch: (value: string) => void;
+  handleSearch: () => void;
+}
+
+export interface ResultsProps {
+  loading: boolean;
+  error: string | null;
+  nameResult: { name: string }[];
 }

@@ -4,7 +4,11 @@ export function filterPeople(
 ) {
   if (!searchName) return peopleList;
 
-  return peopleList.filter((person) =>
+  const filterList = peopleList.filter((person) =>
     person.name.toLowerCase().includes(searchName.toLowerCase())
   );
+
+  // console.log(filterList);
+
+  return filterList;
 }

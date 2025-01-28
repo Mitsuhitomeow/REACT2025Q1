@@ -1,7 +1,11 @@
 import { NamesProps } from '../../../types/interface';
 import styles from './Search.module.scss';
 
-export function Search({ nameSearch, setNameSearch }: NamesProps) {
+export function Search({
+  nameSearch,
+  setNameSearch,
+  handleSearch,
+}: NamesProps) {
   return (
     <>
       <form className={styles.search_section}>
@@ -10,7 +14,9 @@ export function Search({ nameSearch, setNameSearch }: NamesProps) {
           value={nameSearch}
           onChange={(e) => setNameSearch(e.target.value)}
         />
-        <button type="submit">Search</button>
+        <button type="button" onClick={handleSearch}>
+          Search
+        </button>
       </form>
     </>
   );
