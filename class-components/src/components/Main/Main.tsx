@@ -3,21 +3,11 @@ import { Results } from './Results/Results';
 import { Search } from './Search/Search';
 import styles from './Main.module.scss';
 import { useEffect, useState } from 'react';
-import { filterPeople } from '../../utils/filterPeople';
 
 export function Main() {
   const { peoples, loading, error } = useFetchPeople('');
   const [nameSearch, setNameSearch] = useState('');
   const [nameResult, setNameResult] = useState(peoples.results || []);
-
-  const handleSearch = () => {
-    if (nameSearch.trim() === '') {
-      setNameResult(peoples.results || []);
-    } else {
-      const filteredResults = filterPeople(peoples.results, nameSearch) || [];
-      setNameResult(filteredResults);
-    }
-  };
 
   useEffect(() => {
     setNameResult(peoples.results || []);
@@ -26,9 +16,10 @@ export function Main() {
   return (
     <main className={styles.main}>
       <Search
+        peoples={peoples}
         nameSearch={nameSearch}
         setNameSearch={setNameSearch}
-        handleSearch={handleSearch}
+        setNameResult={setNameResult}
       />
       <Results loading={loading} error={error} nameResult={nameResult} />
     </main>
