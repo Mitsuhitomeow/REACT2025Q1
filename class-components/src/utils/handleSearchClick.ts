@@ -6,10 +6,10 @@ export function handleSearch({
   nameSearch,
   setNameResult,
 }: HandleSearchProps) {
-  if (nameSearch.trim() === '') {
-    setNameResult(peoples.results || []);
-  } else {
-    const filteredResults = filterPeople(peoples.results, nameSearch) || [];
-    setNameResult(filteredResults);
-  }
+
+  const filteredResults = filterPeople(peoples.results, nameSearch) || [];
+
+  return nameSearch.trim() === ''
+    ? setNameResult(peoples.results || [])
+    : setNameResult(filteredResults);
 }
