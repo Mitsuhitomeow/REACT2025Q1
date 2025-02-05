@@ -7,5 +7,5 @@ export default defineConfig({
   server: {
     host: true,
   },
-  base: '/mitsuhitomeow-REACT2025Q1/class-components/',
+  base: '/REACT2025Q1/class-components/',
 })

@@ -6,7 +6,6 @@ export function handleSearch({
   nameSearch,
   setNameResult,
 }: HandleSearchProps) {
-
   const filteredResults = filterPeople(peoples.results, nameSearch) || [];
 
   return nameSearch.trim() === ''
