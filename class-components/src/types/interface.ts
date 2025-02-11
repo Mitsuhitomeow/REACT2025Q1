@@ -1,5 +1,5 @@
 export interface PeopleFetchProps {
-  results: { name: string }[];
+  results: { name: string; birth_year: string }[];
 }
 
 export interface NamesProps {

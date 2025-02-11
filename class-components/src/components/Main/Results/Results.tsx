@@ -1,5 +1,5 @@
 import { ResultsProps } from '../../../types/interface';
-import { Cards } from '../../Cards/Cards';
+import { Cards } from './Cards/Cards';
 
 export function Results({ loading, error, nameResult }: ResultsProps) {
   return (

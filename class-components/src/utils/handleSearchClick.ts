@@ -1,4 +1,4 @@
-import { HandleSearchProps } from '../types/interface';
+import { HandleSearchProps, PeopleFetchProps } from '../types/interface';
 import { filterPeople } from './filterPeople';
 
 export function handleSearch({
@@ -6,9 +6,11 @@ export function handleSearch({
   nameSearch,
   setNameResult,
 }: HandleSearchProps) {
-  const filteredResults = filterPeople(peoples.results, nameSearch) || [];
+  const filteredResults =
+    filterPeople(peoples.results as PeopleFetchProps['results'], nameSearch) ||
+    [];
 
   return nameSearch.trim() === ''
-    ? setNameResult(peoples.results || [])
+    ? setNameResult((peoples.results as PeopleFetchProps['results']) || [])
     : setNameResult(filteredResults);
 }

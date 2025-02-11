@@ -1,5 +1,7 @@
+import { PeopleFetchProps } from '../types/interface';
+
 export function filterPeople(
-  peopleList: { name: string }[],
+  peopleList: PeopleFetchProps['results'],
   searchName: string | undefined
 ) {
   if (!searchName) return peopleList;
