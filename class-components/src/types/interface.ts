@@ -20,3 +20,8 @@ export interface HandleSearchProps {
   nameSearch: string;
   setNameResult: (value: PeopleFetchProps['results']) => void;
 }
+
+export interface CardProps {
+  name: string;
+  birth_year: string;
+}

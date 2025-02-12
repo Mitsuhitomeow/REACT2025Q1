@@ -1,12 +1,7 @@
+import { CardProps } from '../../types/interface';
 import styles from './card.module.scss';
 
-export function Card({
-  name,
-  birth_year,
-}: {
-  name: string;
-  birth_year: string;
-}) {
+export function Card({ name, birth_year }: CardProps) {
   return (
     <div className={styles.card}>
       <span>{name}</span>
