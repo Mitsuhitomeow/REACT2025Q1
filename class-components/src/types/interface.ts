@@ -1,5 +1,11 @@
 export interface PeopleFetchProps {
-  results: { name: string; birth_year: string }[];
+  results: {
+    name: string;
+    birth_year: string;
+    gender: string;
+    height: string;
+    mass: string;
+  }[];
 }
 
 export interface NamesProps {
@@ -24,4 +30,7 @@ export interface HandleSearchProps {
 export interface CardProps {
   name: string;
   birth_year: string;
+  gender: string;
+  height: string;
+  mass: string;
 }
